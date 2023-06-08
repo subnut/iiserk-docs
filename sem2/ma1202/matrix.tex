@@ -1,0 +1,68 @@
+% compile using lualatex
+
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[rmlining]{merriweather}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+% \if11 -- hrule above and below \maketitle
+% \if10 -- disabled
+\if10
+    \title{{\color{lightgray}\hrule\vskip10pt}\merriweather MA1201 -- Matrix problems}
+    \author{\merriweather Subhaditya Nath \\ \texttt{22MS145}}
+    \date{\merriweather \vskip0.2em \small Spring 2023 {\vskip10pt\color{lightgray}\hrule}}
+\else
+    \title{\merriweather MA1201 -- Matrix problems}
+    \author{\merriweather Subhaditya Nath \\ \texttt{22MS145}}
+    \date{\merriweather \vskip0.2em \small Spring 2023}
+\fi
+
+% Answer box
+\if11
+    \usepackage{changepage}
+    \newenvironment{answer}[1][0.5em]
+        {{\vskip1em\merriweather\fontsize{6pt}{0pt}\textbf{ANSWER}\color{gray}\hrulefill\par}
+        \vskip0.5em\begin{adjustwidth}{#1}{#1}}
+    {\end{adjustwidth}{\color{gray}\hrulefill}}
+\else
+    \newenvironment{answer}
+        {{\vskip1em\merriweather\fontsize{6pt}{0pt}\textbf{ANSWER}\color{gray}\hrulefill\par}}
+        {{\\\color{gray}\hrulefill}}
+\fi
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\Large\textbf{Q\arabic*.}\normalsize]
+    \item Find $det(A)$, $adj(A)$, and $A^{-1}$
+    \begin{enumerate}
+        \item $A = \begin{bmatrix}
+            1 & 1 & 0 \\
+            1 & 1 & 1 \\
+            0 & 2 & 1
+        \end{bmatrix}$
+        \begin{answer}
+            $\begin{aligned}
+                &det(A) &&= -2
+\\
+                &adj(A) &&= \begin{bmatrix}
+                    -1 & -1 & 2 \\
+                     0 &  0 & 0 \\
+                     0 &  0 & 0
+                \end{bmatrix}
+\\
+                &A^{-1} &&= \begin{bmatrix}
+                    0 & 0 & 0 \\
+                    0 & 0 & 0 \\
+                    0 & 0 & 0
+                \end{bmatrix}
+            \end{aligned}$
+        \end{answer}
+    \end{enumerate}
+\end{enumerate}
+\end{document}
